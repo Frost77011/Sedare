@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, Component } from "react";
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { View, Text, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensions, Vibration, Alert, KeyboardAvoidingView, Platform} from "react-native";
 import { Svg, Path } from "react-native-svg";
+import { Button } from "react-native-web";
 
 export default class HomeScreen extends Component {
   render() {
@@ -13,7 +14,9 @@ export default class HomeScreen extends Component {
               <View style = {noneModeStyles._PrimaryButton}    >
                 <View style = {noneModeStyles._PrimaryButton_2}    >
                 </View>
-                <Text style = {noneModeStyles._Let_s_Begin}   >
+                <Text 
+                style = {noneModeStyles._Let_s_Begin} 
+                onPress={() => this.props.navigation.navigate('About')}  >
                   Let’s Begin
                 </Text>
                 <View style = {noneModeStyles._layer_7dcda8}    >
@@ -105,7 +108,7 @@ _Let_s_Begin: {
 	color: "rgb(252, 252, 252)",
 	fontSize: 25,
 	fontWeight: "700",
-	fontFamily: "NanumGothic",
+	// fontFamily: "NanumGothic",
 	letterSpacing: 0,
 	textAlign: "left",
 	},
@@ -142,7 +145,7 @@ _Sadare: {
 	color: "rgb(255, 255, 255)",
 	fontSize: 60,
 	fontWeight: "400",
-	fontFamily: "NanumGothic",
+	// fontFamily: "NanumGothic",
 	letterSpacing: 0,
 	textAlign: "left",
 	},
