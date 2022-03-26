@@ -136,14 +136,14 @@ export default class MusicScreen extends Component {
                 <View style = {noneModeStyles._Rectangle_14}    >
                 </View>
                 <View style = {noneModeStyles.____Back}    >
-                  <Text style = {noneModeStyles.____Back_2}   >
-                    {/* this is where the back button should be */}
-                  </Text>
+				<Text style = {noneModeStyles.____Back_2}  onClick={() => this.props.navigation.navigate('Mood')} >
+					Back
+				</Text>
                 </View>
               </View>
             </View>
           </View>
-          <View style = {noneModeStyles._Group_8}    >
+          <View style = {noneModeStyles._Group_8}   onClick={() => this.props.navigation.navigate('Meditation')} >
             <View style = {noneModeStyles._Rectangle_10}    >
             </View>
             <View style = {noneModeStyles._PrimaryButton}    >
@@ -155,7 +155,7 @@ export default class MusicScreen extends Component {
                 </View>
               </View>
               <Text style = {noneModeStyles._Let_s_Begin}   >
-                Pick Time
+                Begin Meditation
               </Text>
               <View style = {noneModeStyles._layer_488211}    >
                 <View style = {noneModeStyles._layer_4a774d}   >
@@ -562,7 +562,7 @@ _Back_Button: {
 _Rectangle_14: {
 	width: 131,
 	height: 62,
-	backgroundColor: "rgb(196, 196, 196)",
+	// backgroundColor: "rgb(196, 196, 196)",
 	position: "absolute",
 	},
 ____Back: {

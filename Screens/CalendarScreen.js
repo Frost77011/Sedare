@@ -2,12 +2,13 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import React, { useState, useRef, useEffect, Component } from "react";
 import { View, Text, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensions, Vibration, Alert, KeyboardAvoidingView, Platform} from "react-native";
-import { Svg, Path } from "react-native-svg";
-import {image_Shore_1_link} from './assets/imageLinks.js'
-import {image_Rectangle_4_link} from './assets/imageLinks.js'
-import {image_Fresh_Turboscent_1_link} from './assets/imageLinks.js'
+import { Svg, Path, inlineStyles } from "react-native-svg";
+import {image_Shore_1_link} from './assets/imageLinks.js';
+import {image_Rectangle_4_link} from './assets/imageLinks.js';
+import {image_Fresh_Turboscent_1_link} from './assets/imageLinks.js';
+import { Calendar } from 'react-native-calendars';
 
-export default class InfoScreen extends Component {
+export default class CalendarScreen extends Component {
   render() {
     return (
 		<KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{height: Dimensions.get("window").height}}>
@@ -71,6 +72,15 @@ export default class InfoScreen extends Component {
 					</View>
 				</View>
 			</View>
+			<View style={noneModeStyles._page4}>
+				<View style={noneModeStyles._streak}>
+					<Text style={noneModeStyles._streak_number}><b>22</b></Text>
+					<Text style={noneModeStyles._streak_text}>Day Streak</Text>
+				</View>
+				<View>
+					<Calendar/>
+				</View>
+			</View>
 			<View style = {noneModeStyles._Header_With_Back}    >
 				<View style = {noneModeStyles._TOP}    >
 					<View style = {noneModeStyles._Fresh_Turboscent_1_container}    >
@@ -79,7 +89,7 @@ export default class InfoScreen extends Component {
 						</View>
 					</View>
 					<Text style = {noneModeStyles._Find_Your_Calm_Place}   >
-						Info
+						Calendar
 					</Text>
 				</View>
 			</View>
@@ -90,7 +100,23 @@ export default class InfoScreen extends Component {
   }
 }
 
+// https://github.com/wix/react-native-calendars
+
 const noneModeStyles = StyleSheet.create({
+_page4: {
+	paddingTop:141,
+},
+_streak: {
+	fontSize: 32,
+	alignItems: 'center',
+},
+_streak_number: {
+	color: "rgb(0,191,255)",
+	fontSize: 40
+},
+_streak_text: {
+	fontSize: 28,
+},
 _page10: {
 	height: 844,
 	width: Dimensions.get("window").width,

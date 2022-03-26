@@ -9,6 +9,9 @@ import HomeScreen from './Screens/HomeScreen';
 import MusicScreen from './Screens/MusicScreen';
 import MoodScreen from './Screens/MoodScreen';
 import InfoScreen from './Screens/InfoScreen';
+import MeditationScreen from './Screens/MeditationScreen';
+import ProfileScreen from './Screens/ProfileScreen';
+import CalendarScreen from './Screens/CalendarScreen';
 
 
 export default class App extends React.Component {
@@ -21,14 +24,23 @@ const AppNavigator = createBottomTabNavigator({
   Home: {
     screen: HomeScreen
   },
-  Music: {
-    screen: MusicScreen
+  Info: {
+    screen: InfoScreen
   },
   Mood: {
     screen: MoodScreen
   },
-  Info: {
-    screen: InfoScreen
+  Music: {
+    screen: MusicScreen
+  },
+  Meditation: {
+    screen: MeditationScreen
+  },
+  Profile: {
+    screen: ProfileScreen
+  },
+  Calendar: {
+    screen: CalendarScreen
   }
 });
 

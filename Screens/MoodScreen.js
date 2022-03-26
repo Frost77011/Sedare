@@ -111,7 +111,7 @@ export default class MoodScreen extends Component {
 								<Image style={{height: "100%", width: "100%"}} source = {{uri: image_Fresh_Turboscent_1_link}}/>
 							</View>
 						</View>
-						<Text style = {noneModeStyles._Let_s_Begin}   >
+						<Text style = {noneModeStyles._Let_s_Begin} onPress={() => this.props.navigation.navigate('Music')}  >
 							Pick Music
 						</Text>
 						<View style = {noneModeStyles.style40}    >
@@ -139,8 +139,8 @@ export default class MoodScreen extends Component {
 							<View style = {noneModeStyles._Rectangle_14}    >
 							</View>
 							<View style = {noneModeStyles.____Back}    >
-								<Text style = {noneModeStyles.____Back_2}   >
-									{/* this is where the back button should be */}
+								<Text style = {noneModeStyles.____Back_2}  onClick={() => this.props.navigation.navigate('Info')} >
+									Back
 								</Text>
 							</View>
 						</View>
@@ -510,7 +510,7 @@ _Find_Your_Calm_Place: {
 _Back_Button: {
 	width: 131,
 	height: 62,
-	backgroundColor: "rgba(255, 255, 255, 0)",
+	// backgroundColor: "rgba(255, 255, 255, 0)",
 	position: "absolute",
 	transform: [
 		{translateX: -16},
@@ -519,13 +519,13 @@ _Back_Button: {
 _Rectangle_14: {
 	width: 131,
 	height: 62,
-	backgroundColor: "rgb(196, 196, 196)",
+	// backgroundColor: "rgb(196, 196, 196)",
 	position: "absolute",
 	},
 ____Back: {
 	width: 67,
 	height: 20,
-	backgroundColor: "rgba(255, 255, 255, 0)",
+	// backgroundColor: "rgba(255, 255, 255, 0)",
 	position: "absolute",
 	transform: [
 		{translateX: 32},

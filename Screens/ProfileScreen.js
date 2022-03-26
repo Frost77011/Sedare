@@ -3,11 +3,16 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import React, { useState, useRef, useEffect, Component } from "react";
 import { View, Text, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensions, Vibration, Alert, KeyboardAvoidingView, Platform} from "react-native";
 import { Svg, Path } from "react-native-svg";
-import {image_Shore_1_link} from './assets/imageLinks.js'
-import {image_Rectangle_4_link} from './assets/imageLinks.js'
-import {image_Fresh_Turboscent_1_link} from './assets/imageLinks.js'
+import {image_Shore_1_link} from './assets/imageLinks.js';
+import {image_Rectangle_4_link} from './assets/imageLinks.js';
+import {image_Fresh_Turboscent_1_link} from './assets/imageLinks.js';
 
-export default class InfoScreen extends Component {
+export default class ProfileScreen extends Component {
+	state = {
+		value: 0.2
+	};
+
+
   render() {
     return (
 		<KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{height: Dimensions.get("window").height}}>
@@ -71,6 +76,17 @@ export default class InfoScreen extends Component {
 					</View>
 				</View>
 			</View>
+			<View style={noneModeStyles._page4}>
+				<View style={noneModeStyles._section_header1}>
+					<Text style={noneModeStyles._section_header}><b>Set Preferences</b></Text>
+					<br></br>
+				</View>
+				<View style={noneModeStyles._section_body}>
+					<Text style={noneModeStyles._section_body_text}>Meditation Time: { this.state.value }</Text>
+					
+					
+				</View>
+			</View>
 			<View style = {noneModeStyles._Header_With_Back}    >
 				<View style = {noneModeStyles._TOP}    >
 					<View style = {noneModeStyles._Fresh_Turboscent_1_container}    >
@@ -79,7 +95,7 @@ export default class InfoScreen extends Component {
 						</View>
 					</View>
 					<Text style = {noneModeStyles._Find_Your_Calm_Place}   >
-						Info
+						Profile
 					</Text>
 				</View>
 			</View>
@@ -91,6 +107,26 @@ export default class InfoScreen extends Component {
 }
 
 const noneModeStyles = StyleSheet.create({
+_page4: {
+	paddingTop:141,
+},
+_section_header1: {
+	borderBottomColor: 'grey',
+	borderBottomWidth: 1,
+	alignItems: 'center',
+},
+_section_header: {
+	fontSize: 24,
+	color: "rgba(110, 110, 110, 100)"
+},
+_section_body: {
+	paddingTop: 10,
+	alignItems: 'center'
+},
+_section_body_text: {
+	fontSize: 18,
+	alignItems: 'center',
+},
 _page10: {
 	height: 844,
 	width: Dimensions.get("window").width,
