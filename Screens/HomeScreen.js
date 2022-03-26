@@ -16,7 +16,7 @@ export default class HomeScreen extends Component {
                 </View>
                 <Text 
                 style = {noneModeStyles._Let_s_Begin} 
-                onPress={() => this.props.navigation.navigate('About')}  >
+                onPress={() => this.props.navigation.navigate('Info')}  >
                   Let’s Begin
                 </Text>
                 <View style = {noneModeStyles._layer_7dcda8}    >
