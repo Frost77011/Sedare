@@ -6,7 +6,9 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
 
 import HomeScreen from './Screens/HomeScreen';
-import AboutScreen from './Screens/AboutScreen';
+import MusicScreen from './Screens/MusicScreen';
+import MoodScreen from './Screens/MoodScreen';
+import InfoScreen from './Screens/InfoScreen';
 
 
 export default class App extends React.Component {
@@ -19,8 +21,14 @@ const AppNavigator = createBottomTabNavigator({
   Home: {
     screen: HomeScreen
   },
-  About: {
-    screen: AboutScreen
+  InfoScreen: {
+    screen: MusicScreen
+  },
+  Mood: {
+    screen: MoodScreen
+  },
+  Info: {
+    screen: InfoScreen
   }
 });
 
