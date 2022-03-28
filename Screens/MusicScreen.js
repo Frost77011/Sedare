@@ -3,10 +3,36 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import React, { useState, useRef, useEffect, Component } from "react";
 import { View, Text, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensions, Vibration, Alert, KeyboardAvoidingView, Platform} from "react-native";
 import { Svg, Path } from "react-native-svg";
-import {image_Fresh_Turboscent_1_7_link} from './assets/imageLinks.js'
-import {image_Fresh_Turboscent_1_8_link} from './assets/imageLinks.js'
+import {image_Fresh_Turboscent_1_7_link} from './assets/imageLinks.js';
+import {image_Fresh_Turboscent_1_8_link} from './assets/imageLinks.js';
+// import Sound from 'react-native-sound'
 
 export default class MusicScreen extends Component {
+
+  	// playSound() {
+	// 	  Sound.setCategory('Playback');
+	// 	let ocean = new Sound('./assets/sounds/Sea-waves-sound.mp3', Sound.MAIN_BUNDLE, (error) => {
+	// 		if (error) {
+	// 			console.log('Failed to load the sound', error);
+	// 			return;
+	// 		}
+
+	// 	});
+
+	// 	ocean.play(success => {
+	// 		if (success) {
+	// 			console.log('Successfully played Ocean');
+	// 		} else {
+	// 			console.log('Playback failed');
+	// 		}
+	// 	})
+
+	//   }
+
+	playSound(sound) {
+		console.log(sound);
+	}
+
   render() {
     return (
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{height: Dimensions.get("window").height}}>
@@ -18,8 +44,8 @@ export default class MusicScreen extends Component {
             <View style = {noneModeStyles._Music_Icon}    >
               <View style = {noneModeStyles._Rectangle_13}    >
               </View>
-              <View style = {noneModeStyles._layer_a8b126}    >
-                <View style = {noneModeStyles._layer_7fc0b8}   >
+              <View style = {noneModeStyles._layer_a8b126} onClick={() => this.playSound('./assets/sounds/Sea-waves-sound.mp3')} >
+                <View style = {noneModeStyles._layer_7fc0b8} >
                   <Svg style={{height: 35, width: 30}} viewBox = "0 0 30 35">
                     <Path fill = {"black"}     d = "M0 0L30 17.5L0 35V0Z"/>
                   </Svg>
@@ -36,7 +62,7 @@ export default class MusicScreen extends Component {
             <View style = {noneModeStyles._Music_Icon_2}    >
               <View style = {noneModeStyles._Rectangle_13_2}    >
               </View>
-              <View style = {noneModeStyles._layer_b4f666}    >
+              <View style = {noneModeStyles._layer_b4f666}  onClick={() => this.playSound('./assets/sounds/Sea-waves-sound.mp3')}  >
                 <View style = {noneModeStyles._layer_6d89b0}   >
                   <Svg style={{height: 35, width: 30}} viewBox = "0 0 30 35">
                     <Path fill = {"black"}     d = "M0 0L30 17.5L0 35V0Z"/>
@@ -54,7 +80,7 @@ export default class MusicScreen extends Component {
             <View style = {noneModeStyles._Music_Icon_3}    >
               <View style = {noneModeStyles._Rectangle_13_3}    >
               </View>
-              <View style = {noneModeStyles._layer_3c5a20}    >
+              <View style = {noneModeStyles._layer_3c5a20}   onClick={() => this.playSound('./assets/sounds/Sea-waves-sound.mp3')} >
                 <View style = {noneModeStyles._layer_406db4}   >
                   <Svg style={{height: 35, width: 30}} viewBox = "0 0 30 35">
                     <Path fill = {"black"}     d = "M0 0L30 17.5L0 35V0Z"/>
@@ -72,7 +98,7 @@ export default class MusicScreen extends Component {
             <View style = {noneModeStyles._Music_Icon_4}    >
               <View style = {noneModeStyles._Rectangle_13_4}    >
               </View>
-              <View style = {noneModeStyles._layer_0509fe}    >
+              <View style = {noneModeStyles._layer_0509fe}  onClick={() => this.playSound('./assets/sounds/Sea-waves-sound.mp3')}  >
                 <View style = {noneModeStyles._layer_b20100}   >
                   <Svg style={{height: 35, width: 30}} viewBox = "0 0 30 35">
                     <Path fill = {"black"}     d = "M0 0L30 17.5L0 35V0Z"/>
