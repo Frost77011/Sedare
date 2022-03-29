@@ -13,6 +13,7 @@ import {image_BackgroundBox_14_link} from './assets/imageLinks.js'
 import {image_BackgroundBox_16_link} from './assets/imageLinks.js'
 import {image_Fresh_Turboscent_1_link} from './assets/imageLinks.js'
 import {image_Fresh_Turboscent_1_2_link} from './assets/imageLinks.js'
+import { ImageBackground } from 'react-native-web';
 
 export default class MeditationScreen extends Component {
   render() {
@@ -43,7 +44,7 @@ export default class MeditationScreen extends Component {
 					</Svg>
 				</View>
 			</View>
-			<View style = {noneModeStyles._Header_With_Back}    >
+			{/* <View style = {noneModeStyles._Header_With_Back}    >
 				<View style = {noneModeStyles._TOP}    >
 					<View style = {noneModeStyles._Fresh_Turboscent_1_container}    >
 						<View style = {noneModeStyles._Fresh_Turboscent_1}   >
@@ -54,7 +55,7 @@ export default class MeditationScreen extends Component {
 						Sedare
 					</Text>
 				</View>
-				{/* <View style = {noneModeStyles._Back_Button}    >
+				 <View style = {noneModeStyles._Back_Button}    >
 					<View style = {noneModeStyles._Rectangle_14}    >
 					</View>
 					<View style = {noneModeStyles.____Back}    >
@@ -62,8 +63,13 @@ export default class MeditationScreen extends Component {
 							
 						</Text>
 					</View>
-				</View> */}
-			</View>
+				</View> 
+			</View> */}
+            {/* <Image style={noneModeStyles.background_gif} source={{uri: 'assets/splash.png'}}>
+
+            </Image> */}
+            {/* <ImageBackground source={{uri: "https://reactjs.org/logo-og.png" }} resizeMode="cover" style={noneModeStyles.background_gif}></ImageBackground> */}
+            <ImageBackground source={{uri: "https://sadare-bucket-gifs.s3.us-west-1.amazonaws.com/InsignificantAggressiveFluke.gif" }} resizeMode="cover" style={noneModeStyles.background_gif}></ImageBackground>
 			<View style = {noneModeStyles._PrimaryButton}    >
 				<View style = {noneModeStyles._PrimaryButton_2}    >
 				</View>
@@ -91,6 +97,10 @@ export default class MeditationScreen extends Component {
 }
 
 const noneModeStyles = StyleSheet.create({
+    background_gif: {
+        flex: 1,
+        justifyContent: "center"
+    },
     _page7: {
         height: 844,
         width: Dimensions.get("window").width,
@@ -108,11 +118,13 @@ const noneModeStyles = StyleSheet.create({
         fontWeight: "400",
         letterSpacing: 0,
         textAlign: "left",
+        borderColor: "rgb(255, 255, 255)",
+        borderRadius: 2
         },
     _Turquoise_flow_1: {
         width: 390,
         height: 747.835,
-        backgroundColor: "rgb(156, 237, 255)",
+        // backgroundColor: "rgb(156, 237, 255)",
         position: "absolute",
         left: 0,
         top: 100,
