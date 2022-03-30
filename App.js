@@ -24,9 +24,9 @@ const AppNavigator = createBottomTabNavigator({
   Home: {
     screen: HomeScreen
   },
-  Info: {
-    screen: InfoScreen
-  },
+  // Info: {
+  //   screen: InfoScreen
+  // },
   Mood: {
     screen: MoodScreen
   },
@@ -35,13 +35,13 @@ const AppNavigator = createBottomTabNavigator({
   },
   Meditation: {
     screen: MeditationScreen
-  },
-  Profile: {
-    screen: ProfileScreen
-  },
-  Calendar: {
-    screen: CalendarScreen
-  }
+   },
+  // Profile: {
+  //   screen: ProfileScreen
+  // },
+  // Calendar: {
+  //   screen: CalendarScreen
+  // }
 });
 
 const AppContainer = createAppContainer(AppNavigator);
