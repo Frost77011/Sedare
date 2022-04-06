@@ -139,7 +139,7 @@ export default class MoodScreen extends Component {
 							<View style = {noneModeStyles._Rectangle_14}    >
 							</View>
 							<View style = {noneModeStyles.____Back}    >
-								<Text style = {noneModeStyles.____Back_2}  onClick={() => this.props.navigation.navigate('Info')} >
+								<Text style = {noneModeStyles.____Back_2}  onPress={() => this.props.navigation.navigate('Home')} >
 									Back
 								</Text>
 							</View>

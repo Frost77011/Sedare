@@ -180,8 +180,8 @@ export default class MusicScreen extends Component {
                   <Image style={{height: "100%", width: "100%"}} source = {{uri: image_Fresh_Turboscent_1_8_link}}/>
                 </View>
               </View>
-              <Text style = {noneModeStyles._Let_s_Begin}   >
-                Begin Meditation
+              <Text style = {noneModeStyles._Let_s_Begin}  onPress={() => this.props.navigation.navigate('Meditation')} >
+                Meditatate
               </Text>
               <View style = {noneModeStyles._layer_488211}    >
                 <View style = {noneModeStyles._layer_4a774d}   >

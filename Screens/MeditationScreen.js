@@ -2,19 +2,7 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import React, { useState, useRef, useEffect, Component } from "react";
 import { View, Text, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensions, Vibration, Alert, KeyboardAvoidingView, Platform} from "react-native";
-import { Svg, Path } from "react-native-svg";
-import {image_BackgroundBox_2_link} from './assets/imageLinks.js'
-import {image_BackgroundBox_4_link} from './assets/imageLinks.js'
-import {image_BackgroundBox_6_link} from './assets/imageLinks.js'
-import {image_BackgroundBox_8_link} from './assets/imageLinks.js'
-import {image_BackgroundBox_10_link} from './assets/imageLinks.js'
-import {image_BackgroundBox_12_link} from './assets/imageLinks.js'
-import {image_BackgroundBox_14_link} from './assets/imageLinks.js'
-import {image_BackgroundBox_16_link} from './assets/imageLinks.js'
-import {image_Fresh_Turboscent_1_link} from './assets/imageLinks.js'
-import {image_Fresh_Turboscent_1_2_link} from './assets/imageLinks.js'
-import { ImageBackground } from 'react-native-web';
-
+import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
 export default class MeditationScreen extends Component {
   render() {
     return (
@@ -25,69 +13,15 @@ export default class MeditationScreen extends Component {
 				Meditation Screen
 			</Text>
 			<View style = {noneModeStyles._Turquoise_flow_1}    >
-			</View>
-			<View style = {noneModeStyles.style3}    >
-				<View style = {noneModeStyles.style4}   >
-					<Svg style={{height: 800, width: 800}} viewBox = "0 0 800 800">
-					</Svg>
-				</View>
-			</View>
-			<View style = {noneModeStyles.style5}    >
-				<View style = {noneModeStyles.style6}   >
-					<Svg style={{height: 820, width: 772}} viewBox = "0 0 772 820">
-					</Svg>
-				</View>
-			</View>
-			<View style = {noneModeStyles.style7}    >
-				<View style = {noneModeStyles.style8}   >
-					<Svg style={{height: 839, width: 780}} viewBox = "0 0 780 839">
-					</Svg>
-				</View>
-			</View>
-			{/* <View style = {noneModeStyles._Header_With_Back}    >
-				<View style = {noneModeStyles._TOP}    >
-					<View style = {noneModeStyles._Fresh_Turboscent_1_container}    >
-						<View style = {noneModeStyles._Fresh_Turboscent_1}   >
-							<Image style={{height: "100%", width: "100%"}} source = {{uri: image_Fresh_Turboscent_1_link}}/>
-						</View>
-					</View>
-					<Text style = {noneModeStyles._Find_Your_Calm_Place}   >
-						Sedare
-					</Text>
-				</View>
-				 <View style = {noneModeStyles._Back_Button}    >
-					<View style = {noneModeStyles._Rectangle_14}    >
-					</View>
-					<View style = {noneModeStyles.____Back}    >
-						<Text style = {noneModeStyles.____Back_2}   >			
-							
-						</Text>
-					</View>
-				</View> 
-			</View> */}
-            {/* <Image style={noneModeStyles.background_gif} source={{uri: 'assets/splash.png'}}>
-
-            </Image> */}
-            {/* <ImageBackground source={{uri: "https://reactjs.org/logo-og.png" }} resizeMode="cover" style={noneModeStyles.background_gif}></ImageBackground> */}
-            <ImageBackground source={{uri: "https://sadare-bucket-gifs.s3.us-west-1.amazonaws.com/InsignificantAggressiveFluke.gif" }} resizeMode="cover" style={noneModeStyles.background_gif}></ImageBackground>
-			<View style = {noneModeStyles._PrimaryButton}    >
-				<View style = {noneModeStyles._PrimaryButton_2}    >
-				</View>
-				<View style = {noneModeStyles._Fresh_Turboscent_1_container_2}    >
-					<View style = {noneModeStyles._Fresh_Turboscent_1_2}   >
-						<Image style={{height: "100%", width: "100%"}} source = {{uri: image_Fresh_Turboscent_1_2_link}}/>
-					</View>
-				</View>
-				<Text style = {noneModeStyles._Let_s_Begin} onPress={() => this.props.navigation.navigate('Info')}  >
-					    Finish
-				</Text>
-				<View style = {noneModeStyles.style23}    >
-					<View style = {noneModeStyles.style24}   >
-						<Svg style={{height: 34, width: 42}} viewBox = "0 0 42 34">
-							<Path fill = {"none"}   stroke = {"white"} strokeWidth = {2} d = "M23.5 1L41 17L23.5 33M1 17H41H1Z"/>
-						</Svg>
-					</View>
-				</View>
+                <Text>Breath</Text>
+            <CountdownCircleTimer
+            isPlaying
+            duration={20}
+            colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+            colorsTime={[7, 5, 2, 0]}
+        >
+    {({ remainingTime }) => <Text>{remainingTime}</Text>}
+  </CountdownCircleTimer>
 			</View>
 		</View>
 	</ScrollView>
@@ -126,8 +60,8 @@ const noneModeStyles = StyleSheet.create({
         height: 747.835,
         // backgroundColor: "rgb(156, 237, 255)",
         position: "absolute",
-        left: 0,
-        top: 100,
+        left: 100,
+        top: 400,
         },
     style3: {
         width: 500,
@@ -272,7 +206,5 @@ const noneModeStyles = StyleSheet.create({
             {translateX: 203},
             {translateY: 9},
         ],
-        },
-    style24: {
         },
     })
