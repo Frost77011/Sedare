@@ -20,7 +20,7 @@ export default class App extends React.Component {
   }
 }
 
-const AppNavigator = createBottomTabNavigator({
+const AppNavigator = createStackNavigator({
   Home: {
     screen: HomeScreen
   },

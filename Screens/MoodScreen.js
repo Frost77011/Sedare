@@ -123,29 +123,7 @@ export default class MoodScreen extends Component {
 						</View>
 					</View>
 				</View>
-				<View style = {noneModeStyles._TOP}    >
-					<View style = {noneModeStyles._Header_With_Back}    >
-						<View style = {noneModeStyles._TOP_2}    >
-							<View style = {noneModeStyles._Fresh_Turboscent_1_container_2}    >
-								<View style = {noneModeStyles._Fresh_Turboscent_1_2}   >
-									<Image style={{height: "100%", width: "100%"}} source = {{uri: image_Fresh_Turboscent_1_2_link}}/>
-								</View>
-							</View>
-							<Text style = {noneModeStyles._Find_Your_Calm_Place}   >
-								Choose a Background
-							</Text>
-						</View>
-						<View style = {noneModeStyles._Back_Button}    >
-							<View style = {noneModeStyles._Rectangle_14}    >
-							</View>
-							<View style = {noneModeStyles.____Back}    >
-								<Text style = {noneModeStyles.____Back_2}  onPress={() => this.props.navigation.navigate('Home')} >
-									Back
-								</Text>
-							</View>
-						</View>
-					</View>
-				</View>
+				
 			</View>
 		</ScrollView>
 		</KeyboardAvoidingView>
@@ -166,7 +144,7 @@ _BackgroundBox: {
 	height: 154,
 	position: "absolute",
 	left: 35,
-	top: 146,
+	top: 46,
 	},
 _BackgroundBox_container: {
 	width: 120,
@@ -196,7 +174,7 @@ _BackgroundBox_3: {
 	height: 154,
 	position: "absolute",
 	left: 36,
-	top: 524,
+	top: 424,
 	},
 _BackgroundBox_container_2: {
 	width: 120,
@@ -226,7 +204,7 @@ _BackgroundBox_5: {
 	height: 154,
 	position: "absolute",
 	left: 35,
-	top: 335,
+	top: 235,
 	},
 _BackgroundBox_container_3: {
 	width: 120,
@@ -256,7 +234,7 @@ _BackgroundBox_7: {
 	height: 154,
 	position: "absolute",
 	left: 36,
-	top: 713,
+	top: 613,
 	},
 _BackgroundBox_container_4: {
 	width: 120,
@@ -286,7 +264,7 @@ _BackgroundBox_9: {
 	height: 154,
 	position: "absolute",
 	left: 235,
-	top: 146,
+	top: 46,
 	},
 _BackgroundBox_container_5: {
 	width: 120,
@@ -316,7 +294,7 @@ _BackgroundBox_11: {
 	height: 154,
 	position: "absolute",
 	left: 235,
-	top: 524,
+	top: 424,
 	},
 _BackgroundBox_container_6: {
 	width: 120,
@@ -346,7 +324,7 @@ _BackgroundBox_13: {
 	height: 154,
 	position: "absolute",
 	left: 235,
-	top: 335,
+	top: 235,
 	},
 _BackgroundBox_container_7: {
 	width: 120,
@@ -376,7 +354,7 @@ _BackgroundBox_15: {
 	height: 154,
 	position: "absolute",
 	left: 235,
-	top: 713,
+	top: 613,
 	},
 _BackgroundBox_container_8: {
 	width: 120,
@@ -406,7 +384,7 @@ _Bottom: {
 	height: 107,
 	position: "absolute",
 	left: 0,
-	top: 740,
+	top: 640,
 	},
 _Rectangle_10: {
 	width: 390,
@@ -544,3 +522,27 @@ ____Back_2: {
 	},
 })
 
+// <View style = {noneModeStyles._TOP}    >
+// 					<View style = {noneModeStyles._Header_With_Back}    >
+// 						<View style = {noneModeStyles._TOP_2}    >
+// 							<View style = {noneModeStyles._Fresh_Turboscent_1_container_2}    >
+// 								{/* top background */}
+// 								<View style = {noneModeStyles._Fresh_Turboscent_1_2}   >
+// 									<Image style={{height: "100%", width: "100%"}} source = {{uri: image_Fresh_Turboscent_1_2_link}}/>
+// 								</View>
+// 							</View>
+// 							<Text style = {noneModeStyles._Find_Your_Calm_Place}   >
+// 								Choose a Background
+// 							</Text>
+// 						</View>
+// 						<View style = {noneModeStyles._Back_Button}    >
+// 							<View style = {noneModeStyles._Rectangle_14}    >
+// 							</View>
+// 							<View style = {noneModeStyles.____Back}    >
+// 								<Text style = {noneModeStyles.____Back_2}  onPress={() => this.props.navigation.navigate('Home')} >
+// 									Back
+// 								</Text>
+// 							</View>
+// 						</View>
+// 					</View>
+// 				</View>

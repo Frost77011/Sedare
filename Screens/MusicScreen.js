@@ -38,6 +38,7 @@ export default class MusicScreen extends Component {
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{height: Dimensions.get("window").height}}>
       <ScrollView bounces={false} showsVerticalScrollIndicator={false} style={{height: Dimensions.get("window").height}}>
         <View style = {noneModeStyles._page2}    >
+			<Text> Pick A Song</Text>
           <View style = {noneModeStyles._MusicBox}    >
             <View style = {noneModeStyles._Fresh_Turboscent_1}    >
             </View>
@@ -146,29 +147,7 @@ export default class MusicScreen extends Component {
               Birds Chirping
             </Text>
           </View>
-          <View style = {noneModeStyles._TOP}    >
-            <View style = {noneModeStyles._Header_With_Back}    >
-              <View style = {noneModeStyles._TOP_2}    >
-                <View style = {noneModeStyles._Fresh_Turboscent_1_container}    >
-                  <View style = {noneModeStyles._Fresh_Turboscent_1_7}   >
-                    <Image style={{height: "100%", width: "100%"}} source = {{uri: image_Fresh_Turboscent_1_7_link}}/>
-                  </View>
-                </View>
-                <Text style = {noneModeStyles._Find_Your_Calm_Place}   >
-                  Pick a Soundtrack
-                </Text>
-              </View>
-              <View style = {noneModeStyles._Back_Button}    >
-                <View style = {noneModeStyles._Rectangle_14}    >
-                </View>
-                <View style = {noneModeStyles.____Back}    >
-				<Text style = {noneModeStyles.____Back_2}  onClick={() => this.props.navigation.navigate('Mood')} >
-					Back
-				</Text>
-                </View>
-              </View>
-            </View>
-          </View>
+         
           <View style = {noneModeStyles._Group_8}   onClick={() => this.props.navigation.navigate('Meditation')} >
             <View style = {noneModeStyles._Rectangle_10}    >
             </View>
@@ -181,7 +160,7 @@ export default class MusicScreen extends Component {
                 </View>
               </View>
               <Text style = {noneModeStyles._Let_s_Begin}  onPress={() => this.props.navigation.navigate('Meditation')} >
-                Meditatate
+                Meditate
               </Text>
               <View style = {noneModeStyles._layer_488211}    >
                 <View style = {noneModeStyles._layer_4a774d}   >
@@ -654,7 +633,6 @@ _Fresh_Turboscent_1_8: {
 _Let_s_Begin: {
 	width: 162.349,
 	height: "auto",
-	position: "absolute",
 	transform: [
 		{translateX: 56},
 		{translateY: 14},
@@ -677,3 +655,27 @@ _layer_4a774d: {
 	},
 })
 
+
+{/* <View style = {noneModeStyles._TOP}    >
+<View style = {noneModeStyles._Header_With_Back}    >
+  <View style = {noneModeStyles._TOP_2}    >
+	<View style = {noneModeStyles._Fresh_Turboscent_1_container}    >
+	  <View style = {noneModeStyles._Fresh_Turboscent_1_7}   >
+		<Image style={{height: "100%", width: "100%"}} source = {{uri: image_Fresh_Turboscent_1_7_link}}/>
+	  </View>
+	</View>
+	<Text style = {noneModeStyles._Find_Your_Calm_Place}   >
+	  Pick a Soundtrack
+	</Text>
+  </View>
+  <View style = {noneModeStyles._Back_Button}    >
+	<View style = {noneModeStyles._Rectangle_14}    >
+	</View>
+	<View style = {noneModeStyles.____Back}    >
+	<Text style = {noneModeStyles.____Back_2}  onClick={() => this.props.navigation.navigate('Mood')} >
+		Back
+	</Text>
+	</View>
+  </View>
+</View>
+</View> */}
