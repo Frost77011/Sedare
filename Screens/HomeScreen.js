@@ -82,7 +82,7 @@ _PrimaryButton: {
 	height: 49,
 	position: "absolute",
 	left: 50,
-	top: 725,
+	top: 690,
 	},
 _PrimaryButton_2: {
 	width: 275,
@@ -124,7 +124,7 @@ _layer_bc0deb: {
 _Logo: {
 	width: "auto",
 	height: "auto",
-	backgroundColor: "rgb(196, 196, 196)",
+	// backgroundColor: "rgb(196, 196, 196)",
 	display: "flex",
 	flexDirection: "row",
 	alignItems: "center",
