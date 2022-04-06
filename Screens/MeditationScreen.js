@@ -1,10 +1,13 @@
 // Aboutscreen.js
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import React, { useState, useRef, useEffect, Component } from "react";
-import { View, Text, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensions, Vibration, Alert, KeyboardAvoidingView, Platform} from "react-native";
+import { View, Text, Button, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensions, Vibration, Alert, KeyboardAvoidingView, Platform} from "react-native";
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
+
+
 export default class MeditationScreen extends Component {
   render() {
+      var breathText = "Breath In";
     return (
 		<KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{height: Dimensions.get("window").height}}>
 	<ScrollView bounces={false} showsVerticalScrollIndicator={false} style={{height: Dimensions.get("window").height}}>
@@ -13,13 +16,23 @@ export default class MeditationScreen extends Component {
 				Meditation Screen
 			</Text>
 			<View style = {noneModeStyles._Turquoise_flow_1}    >
-                <Text>Breath</Text>
             <CountdownCircleTimer
             isPlaying
-            duration={20}
+            isSmoothColorTransition
+            duration={10}
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
             colorsTime={[7, 5, 2, 0]}
-        >
+            onComplete={() => {
+                if (breathText === "Breath In"){
+                    breathText = "Breath Out";
+                }
+                else{
+                    breathText = "Breath In";
+                }
+                alert(breathText)
+                // repeat animation in 1.5 seconds
+                return { shouldRepeat: true, delay: 1.0 } 
+              }}            >
     {({ remainingTime }) => <Text>{remainingTime}</Text>}
   </CountdownCircleTimer>
 			</View>
