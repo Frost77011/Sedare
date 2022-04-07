@@ -28,7 +28,7 @@ export default class HomeScreen extends Component {
               </View>
               <View style = {noneModeStyles._Logo}    >
                 <Text style = {noneModeStyles._Sadare}   >
-                  Sadare
+                  Sedare
                 </Text>
                 <View style = {noneModeStyles._twemoji_leaf_fluttering_in_wind}    >
                   <View style = {noneModeStyles._layer_3c7bb0}    >

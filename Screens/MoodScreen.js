@@ -118,8 +118,8 @@ export default class MoodScreen extends Component {
 								<Image style={{height: "100%", width: "100%"}} source = {{uri: image_Fresh_Turboscent_1_link}}/>
 							</View>
 						</View>
-						<Text style = {noneModeStyles._Let_s_Begin} onPress={() => this.props.navigation.navigate('Music')}  >
-							Pick Music
+						<Text style = {noneModeStyles._Let_s_Begin} onPress={() => this.props.navigation.navigate('Meditation')}  >
+							Meditate
 						</Text>
 						<View style = {noneModeStyles.style40}    >
 							<View style = {noneModeStyles.style41}   >

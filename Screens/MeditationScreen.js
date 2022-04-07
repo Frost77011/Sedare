@@ -4,13 +4,26 @@ import React, { useState, useRef, useEffect, Component } from "react";
 import { View, Text, Button, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensions, Vibration, Alert, KeyboardAvoidingView, Platform} from "react-native";
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
 import Global from "./Global.js"
+// import VideoPlayer from 'react-native-video-controls';
 
 export default class MeditationScreen extends Component {
-  render() {
-      var breathText = "Breath In";
-      var counter = global.time;
 
-      
+
+
+  render() {
+    // const changeText = (time) => {
+    //     time += 1;
+    //     return <Text>Time: {time}</Text>
+    // }
+      var breathText = "Breath In";
+      var counter = 0;
+      var time = global.time;
+
+    //   useEffect(() => {
+    //     Sound.setCategory('Playback');
+    //     this.playSound('./assets/sounds/Sea-waves-sound.mp3');
+    //  });
+   
     return (
 		<KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{height: Dimensions.get("window").height}}>
 		<View style = {noneModeStyles._page7}    >
@@ -30,7 +43,7 @@ export default class MeditationScreen extends Component {
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
             colorsTime={[7, 2, 0]}
             onComplete={() => {
-                if (counter === 1){
+                if (counter === time){
                     alert("Session Complete")
                     return {shouldRepeat: false}
                 }
@@ -39,8 +52,8 @@ export default class MeditationScreen extends Component {
                 }
                 else{
                     breathText = "Breath In";
+                    counter += 1;
                 }
-                counter += 1;
                 // repeat animation in 1.5 seconds
                 return { shouldRepeat: true, delay: .5 } 
               }}            >
@@ -50,6 +63,18 @@ export default class MeditationScreen extends Component {
             onPress={() => {alert("Session Ended") 
             this.props.navigation.navigate('Home')}}
             style = {noneModeStyles.endSession} />
+            <View>
+            <Button
+            title="-"
+            onPress={() => time -= 1}
+            />    
+            <Text>Cycles: {time}</Text>         
+        <Button
+            title="+"
+            onPress={() => time += 1}
+            />
+            </View>
+            
             </View>
 		</View>
 	</KeyboardAvoidingView>

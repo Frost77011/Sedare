@@ -31,9 +31,9 @@ const AppNavigator = createStackNavigator({
   Mood: {
     screen: MoodScreen
   },
-  Music: {
-    screen: MusicScreen
-  },
+  // Music: {
+  //   screen: MusicScreen
+  // },
   Meditation: {
     screen: MeditationScreen
    },

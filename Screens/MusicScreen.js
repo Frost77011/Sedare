@@ -5,7 +5,6 @@ import { View, Text, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensi
 import { Svg, Path } from "react-native-svg";
 import {image_Fresh_Turboscent_1_7_link} from './assets/imageLinks.js';
 import {image_Fresh_Turboscent_1_8_link} from './assets/imageLinks.js';
-// import Sound from 'react-native-sound'
 
 export default class MusicScreen extends Component {
 
