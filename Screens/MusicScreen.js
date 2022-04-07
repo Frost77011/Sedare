@@ -148,7 +148,10 @@ export default class MusicScreen extends Component {
             </Text>
           </View>
          
-          <View style = {noneModeStyles._Group_8}   onClick={() => this.props.navigation.navigate('Meditation')} >
+        
+        </View>
+      </ScrollView>
+	  <View style = {noneModeStyles._Group_8}   onClick={() => this.props.navigation.navigate('Meditation')} >
             <View style = {noneModeStyles._Rectangle_10}    >
             </View>
             <View style = {noneModeStyles._PrimaryButton}    >
@@ -171,8 +174,6 @@ export default class MusicScreen extends Component {
               </View>
             </View>
           </View>
-        </View>
-      </ScrollView>
       </KeyboardAvoidingView>
     )
   }
@@ -587,16 +588,15 @@ ____Back_2: {
 	color: "rgb(252, 252, 252)",
 	fontSize: 20,
 	fontWeight: "700",
-	
 	letterSpacing: 0,
 	textAlign: "left",
 	},
 _Group_8: {
 	width: 375,
-	height: 107,
+	height: 110,
 	position: "absolute",
 	left: 0,
-	top: 740,
+	top: 650,
 	},
 _Rectangle_10: {
 	width: 375,

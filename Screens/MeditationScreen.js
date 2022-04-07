@@ -3,41 +3,55 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import React, { useState, useRef, useEffect, Component } from "react";
 import { View, Text, Button, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensions, Vibration, Alert, KeyboardAvoidingView, Platform} from "react-native";
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
-
+import Global from "./Global.js"
 
 export default class MeditationScreen extends Component {
   render() {
       var breathText = "Breath In";
+      var counter = global.time;
+
+      
     return (
 		<KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{height: Dimensions.get("window").height}}>
-	<ScrollView bounces={false} showsVerticalScrollIndicator={false} style={{height: Dimensions.get("window").height}}>
 		<View style = {noneModeStyles._page7}    >
 			<Text style = {noneModeStyles._Meditation_Screen}   >
-				Meditation Screen
+            {global.bg}
 			</Text>
+            <Text style = {noneModeStyles._Meditation_Screen2}   >
+				Sedare
+			</Text>
+            
 			<View style = {noneModeStyles._Turquoise_flow_1}    >
+
             <CountdownCircleTimer
             isPlaying
             isSmoothColorTransition
             duration={10}
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-            colorsTime={[7, 5, 2, 0]}
+            colorsTime={[7, 2, 0]}
             onComplete={() => {
+                if (counter === 1){
+                    alert("Session Complete")
+                    return {shouldRepeat: false}
+                }
                 if (breathText === "Breath In"){
                     breathText = "Breath Out";
                 }
                 else{
                     breathText = "Breath In";
                 }
-                alert(breathText)
+                counter += 1;
                 // repeat animation in 1.5 seconds
-                return { shouldRepeat: true, delay: 1.0 } 
+                return { shouldRepeat: true, delay: .5 } 
               }}            >
-    {({ remainingTime }) => <Text>{remainingTime}</Text>}
+    {({ remainingTime }) => <Text>{breathText} for {remainingTime}</Text>}
   </CountdownCircleTimer>
-			</View>
+            <Button  backgroundColor="grey" color="grey" title="End Session" 
+            onPress={() => {alert("Session Ended") 
+            this.props.navigation.navigate('Home')}}
+            style = {noneModeStyles.endSession} />
+            </View>
 		</View>
-	</ScrollView>
 	</KeyboardAvoidingView>
     )
   }
@@ -48,6 +62,12 @@ const noneModeStyles = StyleSheet.create({
         flex: 1,
         justifyContent: "center"
     },
+    endSession:{
+        backgroundColor: "rgb(255, 255, 255)",
+        letterSpacing: 6,
+
+    },
+    
     _page7: {
         height: 844,
         width: Dimensions.get("window").width,
@@ -55,26 +75,37 @@ const noneModeStyles = StyleSheet.create({
         backgroundColor: "rgb(255, 255, 255)",
         },
     _Meditation_Screen: {
+        letterSpacing: 6,
         width: "auto",
         height: "auto",
-        position: "absolute",
-        left: 110,
         top: 74,
+        justifyContent: "center",
         color: "rgb(0, 0, 0)",
         fontSize: 20,
         fontWeight: "400",
-        letterSpacing: 0,
-        textAlign: "left",
+        textAlign: "center",
         borderColor: "rgb(255, 255, 255)",
         borderRadius: 2
         },
+        _Meditation_Screen2: {
+            letterSpacing: 6,
+            width: "auto",
+            height: "auto",
+            justifyContent: "center",
+            top: 24,
+            color: "rgb(0, 0, 0)",
+            fontSize: 20,
+            fontWeight: "400",
+            textAlign: "center",
+            borderColor: "rgb(255, 255, 255)",
+            borderRadius: 2
+            },
     _Turquoise_flow_1: {
         width: 390,
         height: 747.835,
-        // backgroundColor: "rgb(156, 237, 255)",
         position: "absolute",
         left: 100,
-        top: 400,
+        top: 200,
         },
     style3: {
         width: 500,
@@ -140,15 +171,15 @@ const noneModeStyles = StyleSheet.create({
         letterSpacing: 0,
         textAlign: "center",
         },
-    _Back_Button: {
-        width: 131,
-        height: 62,
-        backgroundColor: "rgba(255, 255, 255, 0)",
-        position: "absolute",
-        transform: [
-            {translateX: -16},
-        ],
-        },
+    // _Back_Button: {
+    //     width: 131,
+    //     height: 62,
+    //     backgroundColor: "rgba(255, 255, 255, 0)",
+    //     position: "absolute",
+    //     transform: [
+    //         {translateX: -16},
+    //     ],
+    //     },
     _Rectangle_14: {
         width: 131,
         height: 62,
@@ -175,20 +206,20 @@ const noneModeStyles = StyleSheet.create({
         letterSpacing: 0,
         textAlign: "left",
         },
-    _PrimaryButton: {
-        width: 275,
-        height: 49,
-        position: "absolute",
-        left: 59,
-        top: 763,
-        },
-    _PrimaryButton_2: {
-        width: 275,
-        height: 49,
-        backgroundColor: "rgb(93, 173, 236)",
-        position: "absolute",
-        borderRadius: 30,
-        },
+    // _PrimaryButton: {
+    //     width: 275,
+    //     height: 49,
+    //     position: "absolute",
+    //     left: 59,
+    //     top: 763,
+    //     },
+    // _PrimaryButton_2: {
+    //     width: 275,
+    //     height: 49,
+    //     backgroundColor: "rgb(93, 173, 236)",
+    //     position: "absolute",
+    //     borderRadius: 30,
+    //     },
     _Fresh_Turboscent_1_container_2: {
         width: 275,
         height: 49,

@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect, Component } from "react";
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { View, Text, Image, ScrollView, TextInput, StyleSheet, Animated, Dimensions, Vibration, Alert, KeyboardAvoidingView, Platform} from "react-native";
 import { Svg, Path } from "react-native-svg";
-import { Button } from "react-native-web";
 
 export default class HomeScreen extends Component {
   render() {

@@ -12,21 +12,24 @@ import {image_BackgroundBox_12_link} from './assets/imageLinks.js'
 import {image_BackgroundBox_14_link} from './assets/imageLinks.js'
 import {image_BackgroundBox_16_link} from './assets/imageLinks.js'
 import {image_Fresh_Turboscent_1_link} from './assets/imageLinks.js'
-import {image_Fresh_Turboscent_1_2_link} from './assets/imageLinks.js'
 
 export default class MoodScreen extends Component {
+
   render() {
+	function clickItem(name) {
+		alert(name + " was selected")
+	}
     return (
 		<KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{height: Dimensions.get("window").height}}>
 		<ScrollView bounces={false} showsVerticalScrollIndicator={false} style={{height: Dimensions.get("window").height}}>
 			<View style = {noneModeStyles._page4}    >
 				<View style = {noneModeStyles._BackgroundBox}    >
-					<View style = {noneModeStyles._BackgroundBox_container}    >
+					<View style = {noneModeStyles._BackgroundBox_container}  >
 						<View style = {noneModeStyles._BackgroundBox_2}   >
 							<Image style={{height: "100%", width: "100%"}} source = {{uri: image_BackgroundBox_2_link}}/>
 						</View>
 					</View>
-					<Text style = {noneModeStyles._Rain_Forest}   >
+					<Text style = {noneModeStyles._Rain_Forest} onPress={() => clickItem("Rain Forest")}  >
 						Rain Forest
 					</Text>
 				</View>
@@ -36,7 +39,7 @@ export default class MoodScreen extends Component {
 							<Image style={{height: "100%", width: "100%"}} source = {{uri: image_BackgroundBox_4_link}}/>
 						</View>
 					</View>
-					<Text style = {noneModeStyles._Rain_Forest_2}   >
+					<Text style = {noneModeStyles._Rain_Forest_2}  onPress={() => clickItem("Sunny Desert")} >
 						Sunny Desert
 					</Text>
 				</View>
@@ -46,7 +49,7 @@ export default class MoodScreen extends Component {
 							<Image style={{height: "100%", width: "100%"}} source = {{uri: image_BackgroundBox_6_link}}/>
 						</View>
 					</View>
-					<Text style = {noneModeStyles._Rain_Forest_3}   >
+					<Text style = {noneModeStyles._Rain_Forest_3}  onPress={() => clickItem("Mountain Lake")} >
 						Mountain Lake
 					</Text>
 				</View>
@@ -56,7 +59,7 @@ export default class MoodScreen extends Component {
 							<Image style={{height: "100%", width: "100%"}} source = {{uri: image_BackgroundBox_8_link}}/>
 						</View>
 					</View>
-					<Text style = {noneModeStyles._Rain_Forest_4}   >
+					<Text style = {noneModeStyles._Rain_Forest_4}  onPress={() => clickItem("Campfire")} >
 						Campfire
 					</Text>
 				</View>
@@ -66,7 +69,7 @@ export default class MoodScreen extends Component {
 							<Image style={{height: "100%", width: "100%"}} source = {{uri: image_BackgroundBox_10_link}}/>
 						</View>
 					</View>
-					<Text style = {noneModeStyles._Rain_Forest_5}   >
+					<Text style = {noneModeStyles._Rain_Forest_5} onPress={() => clickItem("Ocean")}  >
 						Ocean
 					</Text>
 				</View>
@@ -76,7 +79,7 @@ export default class MoodScreen extends Component {
 							<Image style={{height: "100%", width: "100%"}} source = {{uri: image_BackgroundBox_12_link}}/>
 						</View>
 					</View>
-					<Text style = {noneModeStyles._Rain_Forest_6}   >
+					<Text style = {noneModeStyles._Rain_Forest_6} onPress={() => clickItem("Calm Woods")}  >
 						Calm Woods
 					</Text>
 				</View>
@@ -86,7 +89,7 @@ export default class MoodScreen extends Component {
 							<Image style={{height: "100%", width: "100%"}} source = {{uri: image_BackgroundBox_14_link}}/>
 						</View>
 					</View>
-					<Text style = {noneModeStyles._Rain_Forest_7}   >
+					<Text style = {noneModeStyles._Rain_Forest_7}  onPress={() => clickItem("Sunrise")} >
 						Sunrise
 					</Text>
 				</View>
@@ -96,11 +99,15 @@ export default class MoodScreen extends Component {
 							<Image style={{height: "100%", width: "100%"}} source = {{uri: image_BackgroundBox_16_link}}/>
 						</View>
 					</View>
-					<Text style = {noneModeStyles._Rain_Forest_8}   >
+					<Text style = {noneModeStyles._Rain_Forest_8} onPress={() => clickItem("Waterfall")}  >
 						Waterfall
 					</Text>
 				</View>
-				<View style = {noneModeStyles._Bottom}    >
+				
+				
+			</View>
+		</ScrollView>
+		<View style = {noneModeStyles._Bottom}    >
 					<View style = {noneModeStyles._Rectangle_10}    >
 					</View>
 					<View style = {noneModeStyles._PrimaryButton}    >
@@ -123,9 +130,6 @@ export default class MoodScreen extends Component {
 						</View>
 					</View>
 				</View>
-				
-			</View>
-		</ScrollView>
 		</KeyboardAvoidingView>
     )
   }
@@ -381,10 +385,10 @@ _Rain_Forest_8: {
 	},
 _Bottom: {
 	width: 390,
-	height: 107,
+	height: 110,
 	position: "absolute",
 	left: 0,
-	top: 640,
+	top: 650,
 	},
 _Rectangle_10: {
 	width: 390,
@@ -399,7 +403,7 @@ _PrimaryButton: {
 	height: 47.6262,
 	position: "absolute",
 	left: 52,
-	top: 32.0748,
+	top: 30,
 	},
 _PrimaryButton_2: {
 	width: 286,

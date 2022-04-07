@@ -16,11 +16,12 @@ import CalendarScreen from './Screens/CalendarScreen';
 
 export default class App extends React.Component {
   render() {
-    return <AppContainer />;
+    return <AppContainer/>;
   }
 }
 
 const AppNavigator = createStackNavigator({
+
   Home: {
     screen: HomeScreen
   },
