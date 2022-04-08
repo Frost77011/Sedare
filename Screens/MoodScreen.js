@@ -12,20 +12,23 @@ import {image_BackgroundBox_12_link} from './assets/imageLinks.js'
 import {image_BackgroundBox_14_link} from './assets/imageLinks.js'
 import {image_BackgroundBox_16_link} from './assets/imageLinks.js'
 import {image_Fresh_Turboscent_1_link} from './assets/imageLinks.js'
+import { showMessage, hideMessage } from "react-native-flash-message";
 
 export default class MoodScreen extends Component {
 
   render() {
+	
 	function clickItem(name) {
 		alert(name + " was selected")
 	}
+
     return (
-		<KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{height: Dimensions.get("window").height}}>
+		<>
 		<ScrollView bounces={false} showsVerticalScrollIndicator={false} style={{height: Dimensions.get("window").height}}>
 			<View style = {noneModeStyles._page4}    >
 				<View style = {noneModeStyles._BackgroundBox}    >
 					<View style = {noneModeStyles._BackgroundBox_container}  >
-						<View style = {noneModeStyles._BackgroundBox_2}   >
+						<View style = {noneModeStyles._BackgroundBox_2}  >
 							<Image style={{height: "100%", width: "100%"}} source = {{uri: image_BackgroundBox_2_link}}/>
 						</View>
 					</View>
@@ -130,7 +133,7 @@ export default class MoodScreen extends Component {
 						</View>
 					</View>
 				</View>
-		</KeyboardAvoidingView>
+				</>
     )
   }
 }
@@ -524,6 +527,10 @@ ____Back_2: {
 	letterSpacing: 0,
 	textAlign: "left",
 	},
+	border:{
+		borderWidth: 10,
+		borderColor: "#5289e3",
+	}
 })
 
 // <View style = {noneModeStyles._TOP}    >
