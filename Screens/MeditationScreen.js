@@ -26,7 +26,7 @@ export default class MeditationScreen extends Component {
     var breathText = "Breath In";
     var counter = 0;
     var time = global.time;
-
+    var breathIn = global.breath;
     return (
       <View style={noneModeStyles._page7}>
         <View style={noneModeStyles._BackgroundBox_2}>
@@ -36,27 +36,29 @@ export default class MeditationScreen extends Component {
           />
         </View>
         <View style={noneModeStyles.buttons}>
-        <TouchableOpacity>
-          <Text
-          style={noneModeStyles.textWhite}
-            onPress={() => {
-                alert("hit" + time);
-                time += 1;
-              }}
-          >- </Text>
-        </TouchableOpacity>
-          <Text style={noneModeStyles.textWhite}>Cycles: {time}</Text>
           <TouchableOpacity>
-          <Text
-          style={noneModeStyles.textWhite}
-            onPress={() => {
+            <Text
+              style={noneModeStyles.textWhite}
+              onPress={() => {
                 alert("hit" + time);
                 time += 1;
               }}
-          >
-          +
-          </Text>
-        </TouchableOpacity>
+            >
+              -{" "}
+            </Text>
+          </TouchableOpacity>
+          <Text style={noneModeStyles.textWhite}>Cycles: 6</Text>
+          <TouchableOpacity>
+            <Text
+              style={noneModeStyles.textWhite}
+              onPress={() => {
+                alert("hit" + time);
+                time += 1;
+              }}
+            >
+              +
+            </Text>
+          </TouchableOpacity>
         </View>
         <TouchableOpacity>
           <Text
@@ -78,17 +80,20 @@ export default class MeditationScreen extends Component {
           <CountdownCircleTimer
             isPlaying
             isSmoothColorTransition
-            duration={10}
-            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-            colorsTime={[7, 2, 0]}
+            duration={breathIn}
+            
+            colors={["#0856A8", "#4298F5", "#9BCCFF"]}
+            colorsTime={[7, 4, 0]}
             onComplete={() => {
               if (counter === time) {
                 alert("Session Complete");
                 return { shouldRepeat: false };
               }
               if (breathText === "Breath In") {
+                  breathIn = Math.abs(global.breath - 2)
                 breathText = "Breath Out";
               } else {
+                breathIn = global.breath
                 breathText = "Breath In";
                 counter += 1;
               }
@@ -127,15 +132,16 @@ const noneModeStyles = StyleSheet.create({
     bottom: 375,
   },
   endSession: {
-    backgroundColor: 'white',
-    flexDirection: 'row',
+    borderRadius: 20,
+    backgroundColor: "white",
+    flexDirection: "row",
     letterSpacing: 6,
     justifyContent: "center",
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
     color: "red",
-    width: '50%',
+    width: "50%",
     left: 100,
     bottom: 300,
   },
