@@ -4,11 +4,22 @@ import React, { useState, useRef, useEffect, Component } from "react";
 import {
   View,
   Text,
+  Button,
   Image,
+  ScrollView,
+  TextInput,
   StyleSheet,
+  Animated,
+  Dimensions,
+  Vibration,
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
   TouchableOpacity,
 } from "react-native";
 import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
+import Global from "./Global.js";
+import { image_BackgroundBox_2_link } from "./assets/imageLinks.js";
 
 export default class MeditationScreen extends Component {
   render() {
@@ -28,6 +39,7 @@ export default class MeditationScreen extends Component {
         <View style={noneModeStyles.buttons}>
           <TouchableOpacity              
            onPress={() => {
+            audio.play();
                 time -= 1;
               }}>
             <Text
@@ -76,6 +88,7 @@ export default class MeditationScreen extends Component {
             onComplete={() => {
               if (counter === time) {
                 alert("Session Complete");
+                this.props.navigation.navigate("Home");
                 return { shouldRepeat: false };
               }
               if (breathText === "Breath In") {
