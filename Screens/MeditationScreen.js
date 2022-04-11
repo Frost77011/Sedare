@@ -27,12 +27,13 @@ export default class MeditationScreen extends Component {
     var counter = 0;
     var time = global.time;
     var breathIn = global.breath;
+
     return (
       <View style={noneModeStyles._page7}>
         <View style={noneModeStyles._BackgroundBox_2}>
           <Image
             style={{ height: "100%", width: "100%" }}
-            source={{ uri: image_BackgroundBox_2_link }}
+            source={{ uri: global.image }}
           />
         </View>
         <View style={noneModeStyles.buttons}>
