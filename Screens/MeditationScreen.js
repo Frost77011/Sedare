@@ -4,22 +4,11 @@ import React, { useState, useRef, useEffect, Component } from "react";
 import {
   View,
   Text,
-  Button,
   Image,
-  ScrollView,
-  TextInput,
   StyleSheet,
-  Animated,
-  Dimensions,
-  Vibration,
-  Alert,
-  KeyboardAvoidingView,
-  Platform,
   TouchableOpacity,
 } from "react-native";
 import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
-import Global from "./Global.js";
-import { image_BackgroundBox_2_link } from "./assets/imageLinks.js";
 
 export default class MeditationScreen extends Component {
   render() {
@@ -37,23 +26,21 @@ export default class MeditationScreen extends Component {
           />
         </View>
         <View style={noneModeStyles.buttons}>
-          <TouchableOpacity>
+          <TouchableOpacity              
+           onPress={() => {
+                time -= 1;
+              }}>
             <Text
               style={noneModeStyles.textWhite}
-              onPress={() => {
-                alert("hit" + time);
-                time += 1;
-              }}
             >
-              -{" "}
+              -
             </Text>
           </TouchableOpacity>
-          <Text style={noneModeStyles.textWhite}>Cycles: 6</Text>
+          <Text style={noneModeStyles.textWhite}>Cycles: {time}</Text>
           <TouchableOpacity>
             <Text
               style={noneModeStyles.textWhite}
               onPress={() => {
-                alert("hit" + time);
                 time += 1;
               }}
             >
@@ -61,14 +48,15 @@ export default class MeditationScreen extends Component {
             </Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity>
-          <Text
-            style={noneModeStyles.endSession}
+        <TouchableOpacity style={noneModeStyles.endSession}
             onPress={() => {
               {
                 this.props.navigation.navigate("Home");
               }
             }}
+            >
+          <Text
+
           >
             End Session
           </Text>
@@ -131,20 +119,22 @@ const noneModeStyles = StyleSheet.create({
     textAlign: "center",
     color: "white",
     bottom: 375,
+    zIndex: 2,
   },
   endSession: {
+    position: "absolute",
     borderRadius: 20,
-    backgroundColor: "white",
+    backgroundColor: "lightgrey",
     flexDirection: "row",
     letterSpacing: 6,
     justifyContent: "center",
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
-    color: "red",
-    width: "50%",
-    left: 100,
-    bottom: 300,
+    width: "30%",
+    left: 135,
+    top: 550,
+    zIndex: 2,
   },
   _BackgroundBox_2: {
     height: "100%",
@@ -153,7 +143,7 @@ const noneModeStyles = StyleSheet.create({
   _Meditation_Screen: {
     letterSpacing: 6,
     justifyContent: "center",
-    color: "white",
+    color: "lightgrey",
     fontSize: 20,
     textAlign: "center",
     bottom: 800,
@@ -163,7 +153,7 @@ const noneModeStyles = StyleSheet.create({
     width: "auto",
     height: "auto",
     justifyContent: "center",
-    color: "white",
+    color: "lightgrey",
     fontSize: 40,
     fontWeight: "400",
     textAlign: "center",
